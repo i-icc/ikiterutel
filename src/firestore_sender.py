@@ -10,16 +10,16 @@ class FireStoreSender:
         initialize_app(cred)
         self._db = firestore.client()
 
-    def send2ikiterutel(self):
+    def send2ikiterutel(self, door_id: int, is_open: bool):
         self._db.collection("ikiterutel").add(
             {
                 "datetime": datetime.now(ZoneInfo("Asia/Tokyo")),
-                "door_id": 1,
-                "is_open": True,
+                "door_id": door_id,
+                "is_open": is_open,
             }
         )
 
 
 if __name__ == "__main__":
     fss = FireStoreSender()
-    fss.send2ikiterutel()
+    fss.send2ikiterutel(1, True)
