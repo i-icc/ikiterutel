@@ -21,7 +21,7 @@ def loop():
     gdm.read()
     if gdm.check():
         is_open = gdm.get_now_status()
-        # fss.send2ikiterutel(1, is_open)
+        fss.send2ikiterutel(1, is_open)
         print(is_open)
 
 if __name__ == "__main__":
