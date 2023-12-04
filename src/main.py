@@ -19,6 +19,7 @@ def start():
 
 def loop():
     gdm.read()
+    print(gdm.get_now_status())
     if gdm.check():
         is_open = gdm.get_now_status()
         # fss.send2ikiterutel(1, is_open)
